@@ -7,9 +7,8 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-
-    <div class="contenedor__formulario">
+<div class="contenedor">
+        <div class="formulario__contenedor">
         <form action="" class="formulario">
             <div class="formulario__grupo">
                 <div class="formulario__contenedor-campos">
@@ -27,7 +26,7 @@
                     <a class="formulario__enlace formulario__enlace--texto" href="#">¿Olvidaste tu contraseña?</a>
                 </div>
                 <div class="formulario__campo">
-                    <div class="prueba">
+                    <div class="contenedor__linea">
                         <hr class="formulario__linea">
                     </div>
                 </div>
@@ -41,15 +40,20 @@
         </div>
     </div>
 
-
-
     
     <div class="contenedor__slogan">
-        <h1>facebook</h1>
-        <p>Facebook te ayuda a comunicarte y compartir con las perosonas que forman parte de tu vida.</p>
+        <div class="prueba1">
+            <div class="contenedor__logo">  
+            <img class="slogan__logo" src="facebook-logo.svg" alt="">
+            </div>
+            <div class="slogan__contenedor-texto">
+                <p class="slogan__texo">Facebook te ayuda a comunicarte y compartir con las perosonas que forman parte de tu vida.</p>
+            </div>
+        </div>
     </div>
+</div>
     <footer class="footer">
-        <div>
+        <div class="footer__contenedor-enlaces-idiomas">
             <a href="#" class="idioma__enlace">Español</a>
             <a href="#" class="idioma__enlace">English (US)</a>
             <a href="#" class="idioma__enlace">Português (Brasil)</a>
@@ -63,10 +67,10 @@
             <a href="#" class="idioma__enlace">中文(简体)</a>
             <button>+</button>
         </div>
-        <div>
-            <hr class="formulario__linea">
+        <div class="footer__contenedor-linea">
+            <hr class="footer__linea">
         </div>
-        <div>
+        <div class="footer__contenedor-enlaces-opciones">
             <a href="#" class="enlace__footer">Registrarte</a>
             <a href="#" class="enlace__footer">Iniciar sesión</a>
             <a href="#" class="enlace__footer">Messenger</a>
@@ -88,7 +92,7 @@
             <a href="#" class="enlace__footer">Crear página</a>
             <a href="#" class="enlace__footer">Desarrolladores</a>
         </div>
-        <div>
+        <div class="footer__derechos">
             Meta © 2025
         </div>
     </footer>
