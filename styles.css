@@ -154,6 +154,42 @@ body{
     margin: 0;
 }
 
+/* ========== DANDOLE ESTILO AL FOOTER ==========*/
 
+.footer{
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer__contenedor-enlaces-idiomas{
+    width: 65%;
+    margin: 30px 0 0 0;
+}
+
+.footer__contenedor-linea{
+    width: 65%;
+    opacity: 0.3;
+}
+
+.footer__contenedor-enlaces-opciones{
+    width: 65%;
+}
+
+.enlace__footer, .idioma__enlace, .footer__contenedor-enlaces-opciones, .footer__derechos{
+    margin: 0 5px 0 0;
+    text-decoration: none;
+    color: #777;
+    font-family: sans-serif;
+    font-weight: 100;
+    font-size: 12px;
+}
+
+.footer__derechos{
+    margin: 20px 0;
+    text-align: start;
+    width: 65%;
+}
 
 
