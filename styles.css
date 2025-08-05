@@ -1,0 +1,82 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f2f4f7;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    height: 100vh;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 5fr 1fr;
+    grid-template-areas: 
+    "slogan formulario"
+    "footer footer";
+}
+
+.contenedor__slogan{
+    grid-area: slogan;
+    border: 1px solid red;
+}
+
+.contenedor__formulario{
+    grid-area: formulario;
+    padding: 100px 0px 0px 65px;
+}
+
+.footer{
+    grid-area: footer;
+}
+
+.formulario, .formulario__info-extra{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    height: 80%;
+    background-color: #fff;
+    border-radius: 7px;
+    
+}
+
+.formulario__grupo{
+    text-align: center;
+}
+
+.formulario__contenedor-campos{
+    display: flex;
+    flex-direction: column;
+    margin: 0 12px;
+}
+
+.formulario__campo{
+    margin: 12px 0 0 0;
+    width: 100%;
+}
+
+.formulario__input, .formulario__boton{
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 4px;
+    border: none;
+    border: 1px solid #ddd;
+}
+
+.formulario__boton--azul{
+    background-color: #0866ff;
+    color: #fff;
+    font-weight: 600;
+    font-size: 15px;    
+}
+
+.formulario__enlace{
+    text-align: center;
+    color: #0866ff;
+    text-decoration: none;
+    font-size: 0.7rem;
+}
+
+
