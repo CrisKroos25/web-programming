@@ -20,26 +20,25 @@ body{
 
 .contenedor__slogan{
     grid-area: slogan;
-    border: 1px solid red;
 }
 
 .contenedor__formulario{
     grid-area: formulario;
-    padding: 100px 0px 0px 65px;
+    padding: 130px 0px 0px 90px;
 }
 
 .footer{
     grid-area: footer;
 }
 
-.formulario, .formulario__info-extra{
+.formulario{
     display: flex;
     flex-direction: column;
-    width: 60%;
-    height: 80%;
+    width: 59%;
+    height: 77%;
     background-color: #fff;
-    border-radius: 7px;
-    
+    border-radius: 7px; 
+    box-shadow: 0px 0px 9px #0003;   
 }
 
 .formulario__grupo{
@@ -49,34 +48,71 @@ body{
 .formulario__contenedor-campos{
     display: flex;
     flex-direction: column;
-    margin: 0 12px;
+    margin: 0 15px;
+    
 }
 
 .formulario__campo{
-    margin: 12px 0 0 0;
+    margin: 13px 0 0 0;
     width: 100%;
 }
 
 .formulario__input, .formulario__boton{
     width: 100%;
-    padding: 10px 12px;
-    border-radius: 4px;
+    padding: 17px;
+    border-radius: 6px;
     border: none;
     border: 1px solid #ddd;
 }
+
+.formulario__input::placeholder {
+    font-size: 17px;       
+    color: #999;           
+}
+
 
 .formulario__boton--azul{
     background-color: #0866ff;
     color: #fff;
     font-weight: 600;
-    font-size: 15px;    
+    line-height: 15px;
+    font-size: 1.2rem;    
 }
 
 .formulario__enlace{
     text-align: center;
     color: #0866ff;
     text-decoration: none;
-    font-size: 0.7rem;
+    font-size: 0.9rem;
+}
+
+.formulario__campo--enlace-separacion{
+    padding: 1px;
+}
+
+.prueba{
+    margin: 25px 0;
+}
+
+.formulario__linea{
+    width: 90%;
+    opacity: 0.3;
+}
+
+.formulario__boton--verde{
+    background-color: #42b72a;
+    color: #fff;
+    font-weight: 600;
+    width: 50%;
+    line-height: 15px;
+    font-size: 1rem;
+}
+
+.formulario__info-extra{
+    width: 50%;
+    margin: 25px 30px;
+    font-size: 0.9rem;
+    text-align: center;
 }
 
 
