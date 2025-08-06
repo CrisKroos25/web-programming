@@ -21,18 +21,28 @@ body{
     grid-template-areas: 
     "slogan formulario"
     "footer footer";
-
 }
 
 /* ========== REPARTIENDO ESPACIOS DE FORMULARIO, SLOGAN Y FOOTER CON GRID ==========*/
 
-.contenedor__slogan{
+.slogan__contenedor{
     grid-area: slogan;
+    display: flex;
+    justify-content: end;
+    align-items: center;
 }
 
 .formulario__contenedor{
     grid-area: formulario;
-    padding: 130px 0px 0px 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    width: 415px;
+    margin: 100px 0 0 80px;
+    padding: 10px;
+    gap: 30px;
+
 }
 
 .footer{
@@ -44,11 +54,10 @@ body{
 .formulario{
     display: flex;
     flex-direction: column;
-    width: 59%;
-    height: 77%;
+    min-width: 100%;
     background-color: #fff;
     border-radius: 7px; 
-    box-shadow: 0px 0px 9px #0003;   
+    box-shadow: 0px 0px 9px #0003;
 }
 
 .formulario__grupo{
@@ -124,33 +133,39 @@ body{
     font-size: 1rem;
 }
 
+.formulario__campo--boton--verde{
+    margin: 0 0 25px 0;
+}
+
 .formulario__info-extra{
     width: 50%;
-    margin: 25px 30px;
     font-size: 0.9rem;
     text-align: center;
+    width: 100%;
 }
 
 /* ========== DANDOLE ESTILO AL SLOGAN ==========*/
 
 .prueba1{
-    width: 63%;
-    margin: 170px 0 0 270px;
+    max-height: min-content;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 35px 0;
 }
-    
+
 .contenedor__logo, .slogan__contenedor-texto{
-    width: 100%;
-    margin: 0;
-    margin: -5px;
+    max-width: 500px;
+    margin: 0 0 0 40px;
 }
 
 .slogan__logo{
-    margin: 0 0 0 -30px;
-    width: 65%;
+    margin: 0 0 -10px -30px;
+    max-width: 300px;
 }
 
 .slogan__texo{
-    font-size: 26px;
+    font-size: 27px;
     margin: 0;
 }
 
