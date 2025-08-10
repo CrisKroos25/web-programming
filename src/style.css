@@ -1,96 +1,210 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*{
+    box-sizing: border-box;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f2f4f7;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* ========== NOMBRANDO ESPACIOS DE FORMULARIO, SLOGAN Y FOOTER CON GRID ==========*/
+
+.contenedor{    
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 5fr 1fr;
+    grid-template-areas: 
+    "slogan formulario"
+    "footer footer";
 }
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* ========== REPARTIENDO ESPACIOS DE FORMULARIO, SLOGAN Y FOOTER CON GRID ==========*/
+
+.slogan__contenedor{
+    grid-area: slogan;
+    display: flex;
+    justify-content: end;
+    align-items: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #f7df1eaa);
+.formulario__contenedor{
+    grid-area: formulario;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    width: 415px;
+    margin: 100px 0 0 80px;
+    padding: 10px;
+    gap: 30px;
+
 }
 
-.card {
-  padding: 2em;
+.footer{
+    grid-area: footer;
 }
 
-.read-the-docs {
-  color: #888;
+/* ========== DANDOLE ESTILO AL FORMULARIO ==========*/
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+    min-width: 100%;
+    background-color: #fff;
+    border-radius: 7px; 
+    box-shadow: 0px 0px 9px #0003;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.formulario__grupo{
+    text-align: center;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.formulario__contenedor-campos{
+    display: flex;
+    flex-direction: column;
+    margin: 0 15px;
+    
 }
+
+.formulario__campo{
+    margin: 13px 0 0 0;
+    width: 100%;
+}
+
+.formulario__input, .formulario__boton{
+    width: 100%;
+    padding: 17px;
+    border-radius: 6px;
+    border: none;
+    border: 1px solid #ddd;
+}
+
+.formulario__input:focus {
+    border:  none;
+    box-shadow: 0 0 0 1px rgb(145, 145, 253);    /* color cian al enfocar */
+    outline: none;                /* elimina contorno azul del navegador */
+}
+
+.formulario__input::placeholder {
+    font-size: 17px;       
+    color: #999;           
+}
+
+
+.formulario__boton--azul{
+    background-color: #0866ff;
+    color: #fff;
+    font-weight: 600;
+    line-height: 15px;
+    font-size: 1.2rem;    
+}
+
+.formulario__enlace{
+    text-align: center;
+    color: #0866ff;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.formulario__campo--enlace-separacion{
+    padding: 1px;
+}
+
+.contenedor__linea{
+    margin: 25px 0;
+}
+
+.formulario__linea{
+    width: 90%;
+    opacity: 0.3;
+}
+
+.formulario__boton--verde{
+    background-color: #42b72a;
+    color: #fff;
+    font-weight: 600;
+    width: 50%;
+    line-height: 15px;
+    font-size: 1rem;
+}
+
+.formulario__campo--boton--verde{
+    margin: 0 0 25px 0;
+}
+
+.formulario__info-extra{
+    width: 50%;
+    font-size: 0.9rem;
+    text-align: center;
+    width: 100%;
+}
+
+/* ========== DANDOLE ESTILO AL SLOGAN ==========*/
+
+.prueba1{
+    max-height: min-content;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 35px 0;
+}
+
+.contenedor__logo, .slogan__contenedor-texto{
+    max-width: 500px;
+    margin: 0 0 0 40px;
+}
+
+.slogan__logo{
+    margin: 0 0 -10px -30px;
+    max-width: 300px;
+}
+
+.slogan__texo{
+    font-size: 27px;
+    margin: 0;
+}
+
+/* ========== DANDOLE ESTILO AL FOOTER ==========*/
+
+.footer{
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer__contenedor-enlaces-idiomas{
+    width: 65%;
+    margin: 30px 0 0 0;
+}
+
+.footer__contenedor-linea{
+    width: 65%;
+    opacity: 0.3;
+}
+
+.footer__contenedor-enlaces-opciones{
+    width: 65%;
+}
+
+.enlace__footer, .idioma__enlace, .footer__contenedor-enlaces-opciones, .footer__derechos{
+    margin: 0 5px 0 0;
+    text-decoration: none;
+    color: #777;
+    font-family: sans-serif;
+    font-weight: 100;
+    font-size: 12px;
+}
+
+.footer__derechos{
+    margin: 20px 0;
+    text-align: start;
+    width: 65%;
+}
+
+
