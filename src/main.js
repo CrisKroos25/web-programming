@@ -1,6 +1,7 @@
 import './style.css'
 import javascriptLogo from './javascript.svg'
 import viteLogo from '/vite.svg'
+import facebookLogo from '/facebook.svg'
 import { setupCounter } from './counter.js'
 
 document.querySelector('#app').innerHTML = `
@@ -41,7 +42,7 @@ document.querySelector('#app').innerHTML = `
     <div class="slogan__contenedor">
         <div class="prueba1">
             <div class="contenedor__logo">  
-                <img class="slogan__logo" src="facebook-logo.svg" alt="">
+                <img class="slogan__logo" src="${facebookLogo}" alt="">
             </div>
             <div class="slogan__contenedor-texto">
                 <p class="slogan__texo">Facebook te ayuda a comunicarte y compartir con las perosonas que forman parte de tu vida.</p>
