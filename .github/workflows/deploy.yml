@@ -46,4 +46,4 @@ jobs:
             --paths "/*"
 
       - name: Show CDN URL
-        run: echo "CDN= https://${{secrets.CLOUDFRONT_URL}}/"
+        run: echo "CDN== https://${{secrets.CLOUDFRONT_URL}}/"
