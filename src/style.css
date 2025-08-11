@@ -9,6 +9,8 @@ body{
     background-color: #f2f4f7;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     height: 100vh;
+    container-type: inline-size;
+    container-name: contenedor-main;
 }
 
 /* ========== NOMBRANDO ESPACIOS DE FORMULARIO, SLOGAN Y FOOTER CON GRID ==========*/
@@ -21,6 +23,7 @@ body{
     grid-template-areas: 
     "slogan formulario"
     "footer footer";
+    padding: 0 25px 0 0;
 }
 
 /* ========== REPARTIENDO ESPACIOS DE FORMULARIO, SLOGAN Y FOOTER CON GRID ==========*/
@@ -82,11 +85,12 @@ body{
     border-radius: 6px;
     border: none;
     border: 1px solid #ddd;
+    font-size: 17px;
 }
 
 .formulario__input:focus {
     border:  none;
-    box-shadow: 0 0 0 1px rgb(145, 145, 253);    /* color cian al enfocar */
+    box-shadow: 0 0 1px 1px rgb(21, 89, 249);    /* color cian al enfocar */
     outline: none;                /* elimina contorno azul del navegador */
 }
 
@@ -207,4 +211,65 @@ body{
     width: 65%;
 }
 
+/* ========== MEDIA QUERIES SLOGAN Y FORMULARIO ==========*/
 
+@container contenedor-main (max-width: 885px){
+
+    body{
+        display: flex;
+        flex-direction: column;
+    }
+    .contenedor{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        order: 2;
+        padding: 0;
+    }
+
+    .formulario__contenedor{
+        margin: 0;
+        padding: 0 24px;
+    }
+
+    .formulario__boton--verde{
+        font-size: 0.995rem;
+    }
+
+    .slogan__contenedor{
+        text-align: center;
+        order: -1;
+    }
+
+    .slogan__contenedor-texto{
+        display: flex;
+        justify-content: center;
+        margin: 0;
+    }
+
+    .slogan__logo{
+        max-width: 325px;
+    }
+
+    .slogan__texo{
+        font-size: 24px;
+        width: 80%;
+    }
+
+    .footer__contenedor-enlaces-idiomas, 
+    .footer__contenedor-linea, 
+    .footer__contenedor-enlaces-opciones, 
+    .footer__derechos{
+        width: 90%;
+    }
+
+    
+    .footer__contenedor-enlaces-idiomas{
+        text-align: start;
+    }
+
+    .footer{
+        display: none;
+    }
+}
