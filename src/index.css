@@ -1,11 +1,14 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+}
+
 body{
   /* Definiendo variables */
   --header-color: #0f224a;
   --body-color: rgb(35, 67, 117);
   --body-font-family: "Monserrat","Lato Fallback",sans-serif;
 
-  box-sizing: border-box;
-  margin: 0;
   background-color: var(--body-color);
   font-family: var(--body-font-family);
 }
@@ -59,4 +62,53 @@ body{
   max-width: 100%;
   width: 85px;
   margin: 10px 50px;
+}
+
+/* ============ CARD =============*/
+.card{
+  width: 320px;
+  background: linear-gradient(135deg, #ffde00, #dff476);
+  box-shadow: 0 0 40px 0 #dff476a1;                                 /* Definiendo sombras. Primer parametro: Horizontal, Segundo: Vertical, Tercero: Desenfoque, Cuarto: Extension de la sombra */
+  padding-top: 20px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin: auto;
+  margin-top: 30px;
+
+  border: 2px solid #555;
+}
+
+.card__title{
+  font-size: 24px;
+  color: #555;
+  margin-top: 15px;
+}
+
+.card__paragraph{
+  text-align: justify;
+  line-height: 1.5;
+  font-size: 13px;
+  padding: 15px 35px 20px 35px;
+  color: #444;
+}
+
+.card__container-img{
+  position: relative;
+  width: 150px;
+  height: 150px;
+  background:var(--body-color);
+  border-radius: 999px;
+}
+
+.card__img{
+  position: absolute;
+  left: 50%;
+  top: 0;                 /* pegada arriba */
+  transform: translateX(-50%) translateY(-100px);  /* levántala 40px */
+  width: 250px;
+  filter:drop-shadow(0 0 10px #fffa);  
 }
