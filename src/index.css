@@ -8,6 +8,7 @@ body{
   --header-color: #0f224a;
   --body-color: rgb(35, 67, 117);
   --body-font-family: "Monserrat","Lato Fallback",sans-serif;
+  --font-color: #fff;
 
   background-color: var(--body-color);
   font-family: var(--body-font-family);
@@ -52,7 +53,7 @@ body{
 }
 
 .header__nav-item a{
-    color: #fff;
+    color: var(--font-color);
     text-decoration: none;
     font-size: 14px;
 }
@@ -60,15 +61,25 @@ body{
 /* Definiendo el tamano del boton de iniciar sesion del HEADER y margenes*/
 .button__container{
   max-width: 100%;
-  width: 85px;
-  margin: 10px 50px;
+  width: 200px;
+  margin-right: 20px;
+}
+
+.header__button{
+  background-color: transparent;
+  color: var(--font-color);
+  padding: 10px 20px;
+  border: 2px solid rgba(0, 255, 255, 0.864);
+  border-radius: 16px;
+  font-size: 11px;
+  letter-spacing: 1.5px;  
 }
 
 /* ============ CARD =============*/
 .card{
   width: 320px;
-  background: linear-gradient(135deg, #ffde00, #dff476);
-  box-shadow: 0 0 40px 0 #dff476a1;                                 /* Definiendo sombras. Primer parametro: Horizontal, Segundo: Vertical, Tercero: Desenfoque, Cuarto: Extension de la sombra */
+  background: linear-gradient(135deg, #ff6a00, rgb(255, 231, 51));
+  box-shadow: 0 0 60px 0 #dff476a1;                                 /* Definiendo sombras. Primer parametro: Horizontal, Segundo: Vertical, Tercero: Desenfoque, Cuarto: Extension de la sombra */
   padding-top: 20px;
   border-radius: 12px;
   display: flex;
@@ -76,16 +87,13 @@ body{
   justify-content: center;
   align-items: center;
 
-  margin: auto;
-  margin-top: 30px;
-
-  border: 2px solid #555;
+  border: 4px solid rgba(255, 123, 0, 0.447);
 }
 
 .card__title{
-  font-size: 24px;
-  color: #555;
-  margin-top: 15px;
+  font-size: 20px;
+  color: #000;
+  margin-bottom: 15px;
 }
 
 .card__paragraph{
@@ -96,19 +104,28 @@ body{
   color: #444;
 }
 
-.card__container-img{
-  position: relative;
-  width: 150px;
-  height: 150px;
-  background:var(--body-color);
-  border-radius: 999px;
+.list{
+  padding: 0;
+  padding-bottom: 20px;  
 }
 
-.card__img{
-  position: absolute;
-  left: 50%;
-  top: 0;                 /* pegada arriba */
-  transform: translateX(-50%) translateY(-100px);  /* levántala 40px */
-  width: 250px;
-  filter:drop-shadow(0 0 10px #fffa);  
+.list-item{
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+main{
+  margin: 60px;
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.footer{
+  background-color: #eee;
+  text-align: center;
+  padding: 40px 100px;
+  color: #444;
+  font-size: 14px;
 }

@@ -1,4 +1,4 @@
-function Header(){
+export default function Header(){
     return(
         <>
         <header className="header">
@@ -17,11 +17,10 @@ function Header(){
                 </ul>
             </nav>
             <div className="button__container">
-                <button>presiona aqui</button>
+                <button className="header__button">INICIAR SESIÓN</button>
             </div>
         </header>
         </>
     )
 }
 
-export default Header

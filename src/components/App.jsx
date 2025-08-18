@@ -1,19 +1,28 @@
-import { useState } from 'react'
-import '../index.css'
-import Header from './Header'
-import Card from './PokemonCard'
+import PokemonCard from './PokemonCard'
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <>
-    <div>
-      <Header />
-      <Card />
-    </div>
-    </>
-  )
+    <main>
+      <PokemonCard name="pikachu" />
+      <PokemonCard name="raichu" />
+      <PokemonCard name="charmander" />
+      <PokemonCard name="charmeleon" />
+      <PokemonCard name="charizard" />
+      <PokemonCard name="squirtle" />
+      <PokemonCard name="wartortle" />
+      <PokemonCard name="blastoise" />
+      <PokemonCard name="bulbasaur" />
+      <PokemonCard name="ivysaur" />
+      <PokemonCard name="venusaur" />
+      <PokemonCard name="caterpie" />
+      <PokemonCard name="weedle" />
+      <PokemonCard name="pidgey" />
+      <PokemonCard name="rattata" />
+      <PokemonCard name="jigglypuff" />
+      <PokemonCard name="meowth" />
+      <PokemonCard name="psyduck" />
+      <PokemonCard name="snorlax" />
+      <PokemonCard name="mewtwo" />      
+    </main>
+  );
 }
-
-export default App
