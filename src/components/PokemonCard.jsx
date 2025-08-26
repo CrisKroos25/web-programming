@@ -43,7 +43,7 @@ export default function PokemonCard({ name = "pikachu" }) {
             <h2 className="card__title"> {data.name.toUpperCase()} #{data.id}</h2>
             <img src={sprite} alt={data.name} width={200} height={200} />
             <p><b>Types:</b> {data.types.map(t => t.type.name).join(", ")}</p>
-            <p><b>Height:</b> {data.height}  |  <b>Weight:</b> {data.weight}</p>
+            <p><b>Height:</b> {data.height * 10}cm |  <b>Weight:</b> {data.weight*0.1}kg </p>
             <ul className="list">
                 {data.stats.map(s => (
                 <li className="list-item" key={s.stat.name}>
