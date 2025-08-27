@@ -1,5 +1,8 @@
 <h1>ENTREGABLES</h1>
 
+<h2>Adjuntar la URL del CDN de CloudFront, con el objetivo de que cualquier pueda acceder al contenido.</h2>
+https://dbm1rozh3kmkl.cloudfront.net/
+
 <h2>Explicación de los hooks utilizados y el por qué de su utilización.</h2>
 
 En la rama 'hw-04' se realizo la utilizacion de hooks, dicha tarea consistia en crear un gestor de tareas y que el estado de cada tarea se guarde en el local storage del navegador. 
