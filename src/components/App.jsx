@@ -1,82 +1,83 @@
 import React, { useState, useEffect } from "react";
 
 function App() {
-  // Estado para manejar los inputs
-  const [nombre, setNombre] = useState("");
-  const [apellido, setApellido] = useState("");
-  const [edad, setEdad] = useState("");
-
-  // Estado para la lista de usuarios: inicializado desde localStorage
-  const [usuarios, setUsuarios] = useState(() => {
-    const datosGuardados = localStorage.getItem("usuarios");
+  const [tarea, setTarea] = useState("");
+  const [tareas, setTareas] = useState(() => {
+    const datosGuardados = localStorage.getItem("tareas");
     return datosGuardados ? JSON.parse(datosGuardados) : [];
   });
 
-  // Guardar en localStorage cada vez que cambia usuarios
+  // Sincronizar con localStorage cada vez que cambie "tareas"
   useEffect(() => {
-    localStorage.setItem("usuarios", JSON.stringify(usuarios));
-  }, [usuarios]);
+    localStorage.setItem("tareas", JSON.stringify(tareas));
+  }, [tareas]);
 
-  // Manejar el submit
+  // Manejar creación de tarea
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const nuevoUsuario = { nombre, apellido, edad };
-
-    // Evitar agregar vacíos
-    if (!nombre || !apellido || !edad) {
-      alert("Todos los campos son obligatorios");
+    if (!tarea.trim()) {
+      alert("Escribe una tarea");
       return;
     }
 
-    // Agregar al array existente
-    setUsuarios([...usuarios, nuevoUsuario]);
+    const nuevaTarea = {
+      id: Date.now(), // ID único
+      nombre: tarea,
+      estado: "Pendiente"
+    };
 
-    // Limpiar inputs
-    setNombre("");
-    setApellido("");
-    setEdad("");
+    setTareas([...tareas, nuevaTarea]);
+    setTarea(""); // limpiar input
+  };
+
+  // Cambiar estado de tarea (Pendiente <-> Completado)
+  const toggleEstado = (id) => {
+    const nuevasTareas = tareas.map((t) =>
+      t.id === id
+        ? { ...t, estado: t.estado === "Pendiente" ? "Completado" : "Pendiente" }
+        : t
+    );
+    setTareas(nuevasTareas);
+  };
+
+  // Eliminar tarea
+  const eliminarTarea = (id) => {
+    const nuevasTareas = tareas.filter((t) => t.id !== id);
+    setTareas(nuevasTareas);
   };
 
   return (
     <div style={{ padding: "20px" }}>
-      <h2>Registro de Usuarios</h2>
+      <h2>Lista de Tareas</h2>
 
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          placeholder="Nombre"
-          value={nombre}
-          onChange={(e) => setNombre(e.target.value)}
+          placeholder="Escribe una tarea"
+          value={tarea}
+          onChange={(e) => setTarea(e.target.value)}
         />
-        <br />
-
-        <input
-          type="text"
-          placeholder="Apellido"
-          value={apellido}
-          onChange={(e) => setApellido(e.target.value)}
-        />
-        <br />
-
-        <input
-          type="number"
-          placeholder="Edad"
-          value={edad}
-          onChange={(e) => setEdad(e.target.value)}
-        />
-        <br />
-
-        <button type="submit">Guardar</button>
+        <button type="submit">Agregar</button>
       </form>
 
       <hr />
 
-      <h3>Usuarios guardados:</h3>
       <ul>
-        {usuarios.map((u, i) => (
-          <li key={i}>
-            {u.nombre} {u.apellido}, Edad: {u.edad}
+        {tareas.map((t) => (
+          <li key={t.id}>
+            <span
+              style={{
+                textDecoration: t.estado === "Completado" ? "line-through" : "none"
+              }}
+            >
+              {t.nombre} - {t.estado}
+            </span>
+            {" "}
+            <button onClick={() => toggleEstado(t.id)}>
+              {t.estado === "Pendiente" ? "Marcar Completada" : "Marcar Pendiente"}
+            </button>
+            <button onClick={() => eliminarTarea(t.id)}>Eliminar</button>
           </li>
         ))}
       </ul>
