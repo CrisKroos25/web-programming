@@ -12,3 +12,11 @@ class Clients(models.Model):
 class Country(models.Model):
     name = models.CharField(max_length=50)
     code = models.CharField(max_length=10)
+
+class Direction(models.Model):
+    client = models.ForeignKey("Clients", on_delete=models.CASCADE, related_name="directions")
+    street = models.CharField(max_length=200)
+    avenue = models.CharField(max_length=200)
+    area = models.CharField(max_length=200)
+    references = models.TextField()
+    
