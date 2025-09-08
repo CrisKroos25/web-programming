@@ -19,4 +19,8 @@ class Direction(models.Model):
     avenue = models.CharField(max_length=200)
     area = models.CharField(max_length=200)
     references = models.TextField()
-    
+
+class Order(models.Model):
+    client = models.ForeignKey("Clients", on_delete=models.CASCADE, related_name="orders")
+    date = models.DateTimeField(auto_now_add=True)
+    total = models.DecimalField(max_digits=10, decimal_places=2)
