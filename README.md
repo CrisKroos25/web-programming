@@ -1,47 +1,85 @@
-Diagrama de bae de datos, desde el primer modelo, hasta el modelo final.
-<img width="880" height="750" alt="image" src="https://github.com/user-attachments/assets/ab5c3e4b-f4fe-4b37-bd4d-69a2f0e973c5" />
+<h1>Instrucciones y procedimiento para realizar la ejecución correcta de la aplicación.</h1>
 
-•	0001_initial.py
-Representa la creación inicial del modelo Clients, que contiene los campos básicos para almacenar información de los clientes.
+Proyecto Web con Django y PostgreSQL (Docker Compose)
 
-•	0002_rename_edad_clients_age.py
-Realiza un cambio de nombre en el atributo del modelo Clients, renombrando el campo edad a age, con el objetivo de mantener consistencia en el uso de un mismo idioma (inglés) dentro de la aplicación.
+El proyecto implementa una aplicación web en Django conectada a una base de datos PostgreSQL,
+contenedorizada mediante Docker y orquestada con Docker Compose.
 
-•	0003_country.py
-Crea el modelo Country, que almacena los países y servirá como referencia para los clientes.
+El objetivo es demostrar la correcta integración entre los servicios de aplicación y base de datos,
+así como el uso de variables de entorno y dependencias dentro de un entorno aislado.
 
-•	0004_clients_country.py
-Agrega un nuevo atributo country al modelo Clients, definido como una clave foránea que apunta al modelo Country, permitiendo asociar cada cliente a un país específico.
+<h2>Estructura del Proyecto</h2>
 
-•	0005_direction.py
-Crea el modelo Direction, el cual está relacionado con Clients mediante una clave foránea. Este modelo permite registrar direcciones vinculadas a cada cliente.
+<img width="445" height="552" alt="image" src="https://github.com/user-attachments/assets/c2c16466-448a-499e-9a92-37f557860572" />
 
-•	0006_order.py
-Crea el modelo Order, que también está relacionado con Clients a través de una clave foránea. Permite almacenar los pedidos realizados por cada cliente.
+Requisitos previos:
 
-•	0007_typepaymentmethod_paymentmethod.py
-Crea los modelos TypePaymentMethod y PaymentMethod.
-
+Antes de ejecutar la aplicación, tener instalado:
 <ul>
-  <li>TypePaymentMethod define los diferentes tipos de pago.</li>
-  <li>PaymentMethod almacena qué tipo de pago utilizó cada cliente, vinculando ambos modelos mediante claves foráneas.</li>
+  <li>Docker Desktop o Docker Engine</li>
+  <li>Docker Compose</li>
+  <li>Git (para clonar el repositorio)</li>
 </ul>
 
-<img width="458" height="181" alt="image" src="https://github.com/user-attachments/assets/0af27488-a595-4e0a-bfff-e3e82745808e" />
+Verificar las versiones en la terminal con:
+<ul>
+  <li>docker --version</li>
+  <li>docker compose version</li>
+</ul>
 
-<img width="380" height="342" alt="image" src="https://github.com/user-attachments/assets/aad27c01-5ff2-4885-a78a-c5c9b78814f1" />
+<h2>Variables de entorno</h2>
 
-Primer modelo:
-<img width="1071" height="155" alt="image" src="https://github.com/user-attachments/assets/9dc06c15-e032-4343-b600-69168dbd87e2" />
+El archivo .env contiene las credenciales y configuración de la base de datos:
 
-Segundo modelo:
-<img width="865" height="188" alt="image" src="https://github.com/user-attachments/assets/80e43a63-7a55-4cf0-8e7d-5f77eb0281be" />
+<img width="472" height="407" alt="image" src="https://github.com/user-attachments/assets/9a42c991-adf3-48c0-9f72-57bcd98fe133" />
 
-Tercer modelo:
-<img width="1013" height="240" alt="image" src="https://github.com/user-attachments/assets/c87df47c-c744-43e2-9938-d504db1cf312" />
+Este archivo debe estar en la raíz del proyecto y tener el mismo nombre .env.
 
-Cuarto modelo:
-<img width="1122" height="172" alt="image" src="https://github.com/user-attachments/assets/aba33596-9c13-4d37-853d-8c1d89d1672c" />
+Archivos principales
 
-Quinto modelo:
-<img width="1203" height="251" alt="image" src="https://github.com/user-attachments/assets/8866b34c-cf0f-4159-8b0a-e43c9e9b83b9" />
+<h2>Dockerfile</h2>
+
+Define la imagen base de Django y los pasos para construir el entorno:
+
+<img width="637" height="842" alt="image" src="https://github.com/user-attachments/assets/3f1391ab-273c-4cdc-b2c9-8ba6c0a8ffa8" />
+
+<h2>docker-compose.yml</h2>
+
+Orquesta los servicios del sistema:
+
+<img width="723" height="900" alt="image" src="https://github.com/user-attachments/assets/cc2c0734-e58b-45a7-b8f7-2ab5da8eaf0e" />
+
+Ejecución del proyecto:
+
+<h4>Construir las imágenes:</h4>
+docker-compose build
+
+<h4>Iniciar los contenedores:</h4>
+docker-compose up
+
+<h4>Verificar que los servicios están corriendo:</h4>
+docker ps
+
+<h4>Acceder a la aplicación:</h4>
+Abrir el navegador y comprobar entrando a:
+🔗 http://localhost:8000
+
+Se deberia ver la pantalla inicial de Django.
+
+<h4>Detener los servicios:</h4>
+Para detener los contenedores:
+
+docker-compose down
+
+Si se desea eliminar los volúmenes (datos de PostgreSQL):
+
+docker-compose down -v
+
+<h2>Notas de desarrollo</h2>
+<ul>
+  <li>El contenedor web usa Python 3.13 y ejecuta la app Django en el puerto 8000.</li>
+  <li>La base de datos PostgreSQL persiste sus datos en el volumen postgres_data.</li>
+  <li>El archivo wait_for_db.py asegura que la base de datos esté lista antes de ejecutar las migraciones.</li>
+</ul>
+
+
