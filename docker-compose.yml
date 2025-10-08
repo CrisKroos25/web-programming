@@ -2,23 +2,22 @@ version: '3.9'
 
 services:
   db:
-    image: postgres16
+    image: postgres:16
     container_name: postgres_db
     restart: always
     env_file:
       - .env
     ports:
-      - "54.32:54.32"
-    volumnes:
+      - "5432:5432"
+    volumes:
     - postgres_data:/var/lib/postgresql/data
 
   web:
     build: .
     container_name: django_app
     command: >
-      sh -c "python manage.py wait_for_db &&
-             python manage.py runserver &&
-             python manage.py runserver 0.0.0.0:8080"
+      sh -c "python manage.py migrate &&
+             python manage.py runserver 0.0.0.0:8000"
     volumes:
       - .:/app
     ports:

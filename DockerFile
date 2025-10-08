@@ -1,22 +1,32 @@
-# Imagen base ligera
+# Imagen base estable y ligera
 FROM python:3.11-slim
 
-# Crear el usuario no root
+# Evitar que Python genere archivos .pyc y buffer de salida
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+
+# Crear usuario no root
 RUN useradd -ms /bin/bash django_user
 
-# Establecer el directorio de trabajo
+# Establecer directorio de trabajo
 WORKDIR /app
 
-# Copiar los archivos de requisitos
+# Copiar requerimientos e instalarlos
 COPY requirements.txt .
 
-# Instalar las dependencias (sin cache para reducir el tamaño de la imagen)
-RUN pip install --no-cache-dir -r requirements.txt
+# Instalar dependencias del sistema necesarias para psycopg2 y Django
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    libpq-dev \
+    && pip install --no-cache-dir -r requirements.txt \
+    && apt-get purge -y build-essential \
+    && apt-get autoremove -y \
+    && rm -rf /var/lib/apt/lists/*
 
-# Copiar el código de la aplicación
-COPY . .    
+# Copiar el código del proyecto al contenedor
+COPY . .
 
-# Cambiar permisos
+# Cambiar propietario de los archivos
 RUN chown -R django_user:django_user /app
 
 # Cambiar al usuario no root
@@ -25,5 +35,5 @@ USER django_user
 # Exponer el puerto 8000
 EXPOSE 8000
 
-# Comando para ejecutar la aplicación
-CMD ["python", "manage.py", "runserver", "0.0.0:8000"]
+# Comando por defecto
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
