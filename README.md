@@ -82,4 +82,6 @@ docker-compose down -v
   <li>El archivo wait_for_db.py asegura que la base de datos esté lista antes de ejecutar las migraciones.</li>
 </ul>
 
-
+<h2>Anexos</h2>
+<img width="1537" height="295" alt="image" src="https://github.com/user-attachments/assets/e42f93ee-90ed-4138-a190-f80b4e977e68" />
+<img width="1920" height="1020" alt="image" src="https://github.com/user-attachments/assets/74dbf38a-a7ec-4de3-b658-f9beea63dc59" />
