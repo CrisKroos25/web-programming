@@ -1,0 +1,44 @@
+# === Python ===
+_pycache_/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.egg-info/
+*.egg
+*.log
+
+# === Entornos virtuales ===
+venv/
+.venv/
+env/
+.env/
+ENV/
+*.env         # Variables de entorno con credenciales
+
+# === Django ===
+db.sqlite3          # Base de datos local de desarrollo
+media/              # Archivos subidos por usuarios (mejor en S3 u otro storage en prod)
+staticfiles/        # Carpeta generada por collectstatic
+
+# === Archivos de configuración ===
+*.sqlite3
+local_settings.py
+
+# === IDEs y editores ===
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# === Sistema operativo ===
+.DS_Store      # macOS
+Thumbs.db      # Windows
+ehthumbs.db
+Desktop.ini
+
+# === Compilación / paquetes ===
+dist/
+build/
+*.bak
+*.swp
