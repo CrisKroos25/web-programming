@@ -11,10 +11,6 @@ _pycache_/
 # === Entornos virtuales ===
 venv/
 .venv/
-env/
-.env/
-ENV/
-*.env         # Variables de entorno con credenciales
 
 # === Django ===
 db.sqlite3          # Base de datos local de desarrollo
