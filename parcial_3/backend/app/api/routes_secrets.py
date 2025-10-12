@@ -4,9 +4,8 @@ from app.services.secret_service import save_secret, reveal_secret
 
 router = APIRouter(tags=["Secrets"]) 
 
-
 @router.post("/hide", response_model=SecretResponse)
-def hide_secret(secret: SecretRequest):
+async def hide_secret(secret: SecretRequest):
     """
     Endpoint para ocultar un mensaje en Redis.
     """
@@ -15,7 +14,7 @@ def hide_secret(secret: SecretRequest):
 
 
 @router.get("/reveal/{key}")
-def reveal_secret_by_key(key: str):
+async def reveal_secret_by_key(key: str):
     """
     Endpoint para revelar un mensaje en Redis.
     """

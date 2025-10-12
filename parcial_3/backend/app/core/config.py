@@ -10,7 +10,4 @@ REDIS_PORT = int(os.getenv("REDIS_PORT", 6379))
 REDIS_DB = int(os.getenv("REDIS_DB", 0))
 
 def get_redis_client():
-    """
-    Devuelve una instancia del cliente Redis configurada.
-    """
-    return redis.Redis(host=REDIS_HOST, port=REDIS_PORT, db=REDIS_DB)
+    return redis.StrictRedis(host="localhost", port=6379, db=0)
