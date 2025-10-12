@@ -1,0 +1,38 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #0d1117;
+  color: #fff;
+  border-bottom: 2px solid #222;
+}
+
+.title {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.tab {
+  background: transparent;
+  color: #bbb;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tab:hover {
+  color: #fff;
+}
+
+.active {
+  color: #00b4d8;
+  border-bottom: 2px solid #00b4d8;
+  padding-bottom: 4px;
+}
