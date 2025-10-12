@@ -9,4 +9,4 @@ app = FastAPI(
 )
 
 # Registrar las rutas
-app.include_router(secrets_router, prefix="/api", tags=["Secrets"])
+app.include_router(secrets_router, prefix="/api")

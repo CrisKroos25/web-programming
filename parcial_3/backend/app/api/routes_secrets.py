@@ -2,7 +2,7 @@ from fastapi import APIRouter, HTTPException
 from app.models.secret_model import SecretRequest, SecretResponse
 from app.services.secret_service import save_secret, reveal_secret
 
-router = APIRouter(prefix="/api", tags=["Secrets"])
+router = APIRouter(tags=["Secrets"]) 
 
 
 @router.post("/hide", response_model=SecretResponse)
