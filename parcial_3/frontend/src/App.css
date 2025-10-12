@@ -1,0 +1,16 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+background: linear-gradient(160deg, #0d1b2a 0%, #1b263b 60%, #415a77 100%);
+  color: #fff;
+  font-family: "Inter", sans-serif;
+}
+
+
+/* Opcional: asegura que el contenedor principal ocupe todo */
+#root {
+  height: 100%;
+  width: 100%;
+}
+

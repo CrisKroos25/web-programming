@@ -1,10 +1,11 @@
 import { useState } from "react";
-import TextBox from "../components/ui/textBox"; 
+import TextBox from "../components/ui/textBox";
+import styles from "./Reveal.module.css";
 
 export default function Reveal() {
-  const [key, setKey] = useState("");           // Donde el usuario escribe la key
-  const [message, setMessage] = useState(null); // Mensaje revelado
-  const [error, setError] = useState(null);     // Para mostrar errores
+  const [key, setKey] = useState("");           
+  const [message, setMessage] = useState(null); 
+  const [error, setError] = useState(null);     
 
   const handleReveal = async () => {
     setError(null);
@@ -19,8 +20,8 @@ export default function Reveal() {
   };
 
   return (
-    <div style={{ padding: "2rem" }}>
-      <h2>Revelar mensaje</h2>
+    <div className={styles.container}>
+      <h2 className={styles.title}>Revelar mensaje</h2>
 
       <TextBox
         placeholder="Ingresa la key generada..."
@@ -28,45 +29,19 @@ export default function Reveal() {
         onChange={setKey}
       />
 
-      <button
-        onClick={handleReveal}
-        style={{
-          marginTop: "1rem",
-          padding: "0.7rem 1.2rem",
-          borderRadius: "8px",
-          background: "#00b4d8",
-          color: "#fff",
-          border: "none",
-          cursor: "pointer",
-        }}
-      >
+      <button onClick={handleReveal} className={styles.button}>
         Revelar
       </button>
 
-      {/* Resultado */}
-      <div style={{ marginTop: "1.5rem" }}>
+      <div className={styles.resultContainer}>
         {message && (
-          <div
-            style={{
-              background: "#e0ffe5",
-              padding: "1rem",
-              borderRadius: "8px",
-              color: "#1b5e20",
-            }}
-          >
+          <div className={`${styles.resultBox} ${styles.success}`}>
             <strong>Mensaje:</strong> {message}
           </div>
         )}
 
         {error && (
-          <div
-            style={{
-              background: "#ffe0e0",
-              padding: "1rem",
-              borderRadius: "8px",
-              color: "#b71c1c",
-            }}
-          >
+          <div className={`${styles.resultBox} ${styles.error}`}>
             {error}
           </div>
         )}

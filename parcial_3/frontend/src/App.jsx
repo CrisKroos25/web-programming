@@ -13,7 +13,7 @@ export default function App() {
     <div>
       <Header activeTab={activeTab} onChangeTab={setActiveTab} />
 
-      <main style={{ padding: "2rem" }}>
+      <main style={{ padding: "2rem 20rem" }}>
         {activeTab === "hide" ? <Hide /> : <Reveal />}
       </main>
     </div>
