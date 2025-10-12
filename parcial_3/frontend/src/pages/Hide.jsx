@@ -1,5 +1,5 @@
 import { useState } from "react";
-import TextBox from "../components/ui/textBox";
+import TextBox from "../components/ui/TextBox";
 import { hideSecret } from "../api/secretApi";
 import styles from "./Hide.module.css";
 
