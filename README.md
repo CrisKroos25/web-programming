@@ -1,1 +1,14 @@
+<<<<<<< HEAD
 # Correccion-Web
+=======
+![1](https://github.com/user-attachments/assets/74dbc132-84b1-49e5-900a-9406727819a0)
+![2](https://github.com/user-attachments/assets/95747f63-d7ef-4f37-b141-4c82fd429cab)
+![3](https://github.com/user-attachments/assets/798f6894-5123-4d51-af92-f3fc28295bcc)
+![4](https://github.com/user-attachments/assets/83777845-5bcc-4ffd-91e9-6f7ac95f54e5)
+![5](https://github.com/user-attachments/assets/d0327f9e-96dc-44a9-ba5d-ab16d41740ed)
+![6](https://github.com/user-attachments/assets/cde2da72-bb16-4332-bb1e-6736c2567c88)
+![7](https://github.com/user-attachments/assets/dc3ac258-3855-48f1-80ef-a98c537424c6)
+![8](https://github.com/user-attachments/assets/6433192c-0820-4f99-8d7d-6c6012b3cc14)
+![9](https://github.com/user-attachments/assets/f6925733-37c0-4594-802a-f9948c48de5b)
+![10](https://github.com/user-attachments/assets/b9d1d81a-99ec-49cd-8968-ac8d26abfaa8)
+>>>>>>> c60b1d375445a3a1b29ee26b3f620610e3974f07
